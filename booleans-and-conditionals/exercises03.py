@@ -19,9 +19,29 @@ engine_temperature = 1200
 
 # Code 5a - 5f here:
 
-
+if engine_temperature>3500 or engine_indicator_light=="red blinking" or fuel_level<1000:
+    print("ENGINE FAILURE IMMINENT!")
+elif engine_temperature>2500 or fuel_level<=5000:
+    print("Check fuel level. Engines running hot.")
+elif engine_temperature<=2500 and fuel_level>5000:
+    print("Fuel level above 25%. Engines good.")
+elif fuel_level>10000:
+    print("Fuel level above 50%. Engines good.")
+elif fuel_level>20000:
+    print("Full tank. Engines good.")
+else:
+    print("Fuel and engine status pending..")
 
 # 6) a) Create the variable command_override, and set it to be true or false. If command_override is false, then the shuttle should only launch if the fuel and engine check are OK. If command_override is true, then the shuttle will launch regardless of the fuel and engine status.
+command_override= False
+
+if command_override== True:
+    print("Let's goooo")
+elif command_override== False:
+    if fuel_level>20000 and fuel_level>5000 and engine_indicator_light!="red blinking":
+        print("ok, let's gooo")
+    else:
+        print("not yet!")
 
 
 # 6) b) Code the following if/else check:

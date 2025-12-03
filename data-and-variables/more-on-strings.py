@@ -1,2 +1,2 @@
-print(type("17"))
-print(type("3.2"))
+fav_vegetable=input("What is your favorite vegetable?")
+print(fav_vegetable, 'are my fav veg.')
